@@ -26,27 +26,6 @@ const runCommand = (command) => {
   });
 };
 
-const babelConfig = {
-  babelrc: false,
-  babelHelpers: 'runtime',
-  compact: false,
-  presets: [
-    ['@babel/preset-env', {
-      targets: ">0.25%",
-      loose: true,
-      corejs: 3,
-      useBuiltIns: 'entry'
-    }]
-  ],
-  plugins: [
-    "@babel/plugin-transform-spread",
-    ["@babel/plugin-transform-runtime", {
-      "regenerator": true,
-      "useESModules": true
-    }]
-  ]
-};
-
 const terserConfig = {
   output: {
     comments: function(node, comment) {
@@ -85,7 +64,6 @@ const getRightPathLocation = (dir) => {
 
 export {
   runCommand,
-  babelConfig,
   terserConfig,
   getConfigArgs,
   getRightPathLocation,
